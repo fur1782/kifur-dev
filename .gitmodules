@@ -1,0 +1,8 @@
+[submodule "kifur_be"]
+	path = kifur_be
+	url = git@github.com:fur1782/kifur.git
+	branch = main
+[submodule "kifur_fe"]
+	path = kifur_fe
+	url = git@github.com:fur1782/KifurWeb.git
+	branch = main
