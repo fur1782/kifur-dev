@@ -36,6 +36,18 @@ if not exist "kifur_be\.env" (
 ) else (
     echo OK: Fitxer .env ja existeix a kifur_be/.env
 )
+
+if not exist "kifur_fe\.env" (
+    echo Creant fitxer .env per al Frontend...
+    (
+        echo # API Configuration
+        echo VITE_API_BASE_URL=http://localhost:3000
+        echo VITE_SOCKET_URL=http://localhost:3000
+    ) > kifur_fe\.env
+    echo OK: Fitxer .env creat a kifur_fe/.env
+) else (
+    echo OK: Fitxer .env ja existeix a kifur_fe/.env
+)
 echo.
 
 REM 3. Preguntar si vol instal·lar dependències localment

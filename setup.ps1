@@ -48,6 +48,20 @@ NODE_ENV=development
 } else {
     Write-Host "OK: Fitxer .env ja existeix a kifur_be/.env" -ForegroundColor Green
 }
+
+$frontendEnvPath = ".\kifur_fe\.env"
+if (-not (Test-Path $frontendEnvPath)) {
+    Write-Host "Creant fitxer .env per al Frontend..." -ForegroundColor Cyan
+    $envContent = @"
+# API Configuration
+VITE_API_BASE_URL=http://localhost:3000
+VITE_SOCKET_URL=http://localhost:3000
+"@
+    Set-Content -Path $frontendEnvPath -Value $envContent
+    Write-Host "OK: Fitxer .env creat a kifur_fe/.env" -ForegroundColor Green
+} else {
+    Write-Host "OK: Fitxer .env ja existeix a kifur_fe/.env" -ForegroundColor Green
+}
 Write-Host ""
 
 # 3. Preguntar si vol instal·lar dependències localment (opcional)
